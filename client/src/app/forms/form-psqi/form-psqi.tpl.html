@@ -1,15 +1,74 @@
-<div ng-controller="FormPsqiCtrl" layout="column" ng-cloak class="md-inline-form">
+<div ng-controller="FormPsqiCtrl as vm">
 
-  <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
-    <div>
-      <md-input-container>
-        <label>Title</label>
-        <input ng-model="user.title">
-      </md-input-container>
+  <button ng-click="log()">Test</button>
+<div ng-control layout="column" ng-cloak class="md-inline-form">
 
-      <md-input-container>
-        <label>Email</label>
-        <input ng-model="user.email" type="email">
-      </md-input-container>
-    </div>
-  </md-content>
+<div class="md-padding" ng-cloak>
+  <div>
+    <fieldset>
+      <legend>Index de Qualité du Sommeil de Pittsburgh - PSQI - {{vm.cardNumber }}/5</legend>
+
+      <!-- Card 1/5 - Patient's identity -->
+      <div layout-wrap layout-gt-sm="row" ng-show="vm.cardNumber == 1">
+        <div flex-gt-sm="50">
+          <md-input-container flex="50">
+            <label>Nom</label>
+            <input required name="clientName" ng-model="vm.patientLastname">
+          </md-input-container>
+
+          <md-input-container flex="50">
+            <label>Prénom</label>
+            <input required name="clientName" ng-model="vm.patientFirstname">
+          </md-input-container>
+
+          <md-input-container>
+            <label>Date de naissance</label>
+            <md-datepicker required ng-model="vm.birthdayDate" name="birthdayDate"></md-datepicker>
+          </md-input-container>
+        </div>
+        <div>Les questions suivantes ont trait à vos habitudes de sommeil peandant le dernier mois seulement. Vos réponses doivent indiquer ce qui correspond aux expériences que vous avez eues pendant la majorité des jours et des nuits au cours du dernier mois. <b>Veuillez répondre à toutes les questions.</b> </div>
+      </div>
+      <!-- End Card 1/5 -->
+
+      <!-- Card 2/5 - Patient's sleeping time -->
+      <div layout-wrap layout-gt-sm="row" ng-show="vm.cardNumber == 2">
+        <div flex-gt-sm="50">
+
+          <div>1. Au cours du mois dernier, quand êtes-vous habituellement allé(e) vous coucher le soir ?</div>
+          <div> <b>TODO: formater heure + contrôle </b></div>
+          <md-input-container flex="50">
+            <label>Heure du coucher</label>
+            <input required name="usualGoToBedHour" ng-model="vm.usualGoToBedHour">
+          </md-input-container>
+
+          <div>2. Au cours du mois dernier, combien vous a-t-il habituellement fallu de temps (en minutes) pour vous endormir chaque soir ?</div>
+          <md-input-container flex="50">
+            <label>Temps avant de dormir</label>
+            <input required name="minutesBeforeSleeping" ng-model="vm.minutesBeforeSleeping" type="number" step="5">
+          </md-input-container>
+
+          <div>3. Au cours du mois dernier, quand vous êtes-vous habituellement levé(e) le matin ?</div>
+          <div> <b>TODO: formater heure + contrôle </b></div>
+          <md-input-container flex="50">
+            <label>Heure du réveil</label>
+            <input required name="usualWakeUpHour" ng-model="vm.usualWakeUpHour">
+          </md-input-container>
+
+          <div>4. Au cours du mois dernier, combien d'heures de sommeil effectif avez-vous eues chaque nuit ? (Ce nombre peut être différent du
+            nombre d'heures que vous avez passées au lit) ?</div>
+          <md-input-container flex="50">
+            <label>Temps sommeil effectif</label>
+            <input required name="effectiveSleepingTime" ng-model="vm.effectiveSleepingTime" type="number" step="1">
+          </md-input-container>
+        </div>
+      </div>
+      <!-- End Card 2/5 -->
+
+
+      <button ng-click="setPreviousCardNumber()" ng-if="vm.cardNumber > 1"> Previous </button>
+      <button ng-click="setNextCardNumber()" ng-if="vm.cardNumber < 5"> Next </button>
+    </fieldset>
+  </div>
+</div>
+</div>
+</div>

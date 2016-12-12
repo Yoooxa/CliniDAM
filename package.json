@@ -53,5 +53,8 @@
   },
   "scripts": {
     "test": "gulp travis"
+  },
+  "dependencies": {
+    "angular-material": "^1.1.1"
   }
 }

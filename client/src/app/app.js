@@ -22,7 +22,8 @@
       'common.footer',
       'common.services.data',
       'common.directives.version',
-      'common.filters.uppercase'
+      'common.filters.uppercase',
+      'common.filters.truncate'
     ])
     .run(run)
     .controller('MainCtrl', MainCtrl)

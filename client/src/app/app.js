@@ -17,6 +17,8 @@
       'app.routes',
       'home',
       'getting-started',
+      'form-isi',
+      'form-psqi',
       'common.header',
       'common.footer',
       'common.services.data',

@@ -44,6 +44,16 @@
                 controller: 'FormIsiCtrl as formIsi'
               }
             }
+          })
+
+          .state('root.form-psqi', {
+            url: '/forms/form-psqi',
+            views: {
+              '@': {
+                templateUrl: 'src/app/forms/form-psqi/form-psqi.tpl.html',
+                controller: 'FormPsqiCtrl as formPsqi'
+              }
+            }
           });
     }
 

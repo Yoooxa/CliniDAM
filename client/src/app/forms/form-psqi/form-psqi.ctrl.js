@@ -5,7 +5,7 @@
    * @name  formPsqiCtrl
    * @description Controller
    */
-  function FormIsiCtrl($log) {
+  function FormPsqiCtrl($log) {
 
   }
 

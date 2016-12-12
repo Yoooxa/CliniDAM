@@ -19,6 +19,7 @@
       'getting-started',
       'form-isi',
       'form-psqi',
+      'form-dn4',
       'common.header',
       'common.footer',
       'common.services.data',

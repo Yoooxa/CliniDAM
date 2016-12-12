@@ -54,6 +54,16 @@
                 controller: 'FormPsqiCtrl as formPsqi'
               }
             }
+          })
+
+          .state('root.form-dn4', {
+            url: '/forms/form-dn4',
+            views: {
+              '@': {
+                templateUrl: 'src/app/forms/form-dn4/form-dn4.tpl.html',
+                controller: 'FormDn4Ctrl as formDn4'
+              }
+            }
           });
     }
 

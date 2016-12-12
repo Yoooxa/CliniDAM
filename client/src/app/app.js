@@ -22,6 +22,7 @@
       'common.footer',
       'common.services.data',
       'common.directives.version',
+      'common.directives.oneclick',
       'common.filters.uppercase'
     ])
     .run(run)

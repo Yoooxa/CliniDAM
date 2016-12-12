@@ -23,7 +23,8 @@
       'common.services.data',
       'common.directives.version',
       'common.directives.oneclick',
-      'common.filters.uppercase'
+      'common.filters.uppercase',
+      'common.filters.truncate'
     ])
     .run(run)
     .controller('MainCtrl', MainCtrl)

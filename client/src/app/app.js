@@ -15,7 +15,6 @@
 
   angular.module('app', [
       'app.routes',
-      'ui.router',
       'home',
       'getting-started',
       'common.header',

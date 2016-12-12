@@ -21,16 +21,6 @@
                 }
             })
 
-            .state('root.getting-started', {
-                url: '/getting-started',
-                views: {
-                    '@': {
-                        templateUrl: 'src/app/getting-started/getting-started.tpl.html',
-                        controller: 'GettingStartedCtrl as docs'
-                    }
-                }
-            })
-
             .state('root.home', {
                 url: '/',
                 views: {
@@ -44,7 +34,17 @@
                     }
                   }
                 }
-              });
+              })
+
+          .state('form-isi', {
+            url: '/forms/form-isi',
+            views: {
+              '@': {
+                templateUrl: 'src/app/forms/form-isi/form-isi.tpl.html',
+                controller: 'FormIsiCtrl as formIsi'
+              }
+            }
+          });
     }
 
         angular.module('app.routes', ['ui.router',

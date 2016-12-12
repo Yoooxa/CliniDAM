@@ -36,7 +36,7 @@
                 }
               })
 
-          .state('form-isi', {
+          .state('root.form-isi', {
             url: '/forms/form-isi',
             views: {
               '@': {

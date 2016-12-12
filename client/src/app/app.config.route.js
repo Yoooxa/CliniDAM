@@ -51,7 +51,7 @@
             views: {
               '@': {
                 templateUrl: 'src/app/forms/form-psqi/form-psqi.tpl.html',
-                controller: 'FormPsqiCtrl as formPsqi'
+                controller: 'FormPsqiCtrl as forsqmPi'
               }
             }
           })
@@ -62,6 +62,16 @@
               '@': {
                 templateUrl: 'src/app/forms/form-dn4/form-dn4.tpl.html',
                 controller: 'FormDn4Ctrl as formDn4'
+              }
+            }
+          })
+
+          .state('root.form-edas21', {
+            url: '/forms/form-edas21',
+            views: {
+              '@': {
+                templateUrl: 'src/app/forms/form-edas21/form-edas21.tpl.html',
+                controller: 'FormEdas21Ctrl as formEdas21'
               }
             }
           });

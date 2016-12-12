@@ -20,6 +20,7 @@
       'form-isi',
       'form-psqi',
       'form-dn4',
+      'form-edas21',
       'common.header',
       'common.footer',
       'common.services.data',

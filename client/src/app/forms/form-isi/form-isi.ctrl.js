@@ -6,15 +6,25 @@
    * @description Controller
    */
   function FormIsiCtrl($scope) {
-    
-    $scope.data = {};
-    $scope.data.cb1 = true;
-    $scope.data.cb2 = false;
-    $scope.data.cb3 = false;
-    $scope.data.cb4 = false;
-    $scope.data.cb5 = false;
+      var vm = this;
+
+      vm.cardNumber = 1
+
+      $scope.log = function() {
+        console.log('--- vm ---')
+        console.log(vm)
+      }
+
+      $scope.setNextCardNumber = function() {
+        vm.cardNumber++
+      }
+
+      $scope.setPreviousCardNumber = function() {
+        vm.cardNumber--
+      }
   }
 
   angular.module('form-isi', ['ngMaterial'])
-    .controller('FormIsiCtrl', FormIsiCtrl);
+    .controller('FormIsiCtrl', FormIsiCtrl)
+    .$inject = ['$scope'];
 })();

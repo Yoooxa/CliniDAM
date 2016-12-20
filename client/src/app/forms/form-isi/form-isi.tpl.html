@@ -178,7 +178,7 @@
             </div>
             <div layout="row" class="table-input">
                 <div flex="40" class="form-question"><p>Perturbation du fonctionnement quotidien</p></div>
-                <md-radio-group layout="row" flex="80">
+                <md-radio-group layout="row" flex="80" ng-model="vm.dailyPerturbation">
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="1"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="2"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="3"></md-radio-button></div>
@@ -188,7 +188,7 @@
             </div>
             <div layout="row" class="table-input">
                 <div flex="40" class="form-question"><p>Détérioration de la qualité de vie</p></div>
-                <md-radio-group layout="row" flex="80">
+                <md-radio-group layout="row" flex="80" ng-model="vm.badLifeQuality">
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="1"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="2"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="3"></md-radio-button></div>
@@ -198,7 +198,7 @@
             </div>
             <div layout="row" class="table-input">
                 <div flex="40" class="form-question"><p>Diminution de la qualité de vie</p></div>
-                <md-radio-group layout="row" flex="80">
+                <md-radio-group layout="row" flex="80" ng-model="vm.lifeQualityDecrease">
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="1"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="2"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="3"></md-radio-button></div>
@@ -208,7 +208,7 @@
             </div>            
             <div layout="row" class="table-input">
                 <div flex="40" class="form-question"><p>Fatigue durant la journée</p></div>
-                <md-radio-group layout="row" flex="80">
+                <md-radio-group layout="row" flex="80" ng-model="vm.dayTired">
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="1"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="2"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="3"></md-radio-button></div>
@@ -218,7 +218,7 @@
             </div>    
             <div layout="row" class="table-input">
                 <div flex="40" class="form-question"><p>Impact sur la concentration ou la mémoire</p></div>
-                <md-radio-group layout="row" flex="80">
+                <md-radio-group layout="row" flex="80" ng-model="vm.concentrationProblem">
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="1"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="2"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="3"></md-radio-button></div>
@@ -228,7 +228,7 @@
             </div>   
             <div layout="row" class="table-input">
                 <div flex="40" class="form-question"><p>Impact sur les relations interpersonnelles</p></div>
-                <md-radio-group layout="row" flex="80">
+                <md-radio-group layout="row" flex="80" ng-model="vm.persoRelationProblem">
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="1"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="2"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="3"></md-radio-button></div>
@@ -238,7 +238,7 @@
             </div>   
             <div layout="row" class="table-input">
                 <div flex="40" class="form-question"><p>Impact sur l'humeur du jour</p></div>
-                <md-radio-group layout="row" flex="80">
+                <md-radio-group layout="row" flex="80" ng-model="vm.moodProblem">
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="1"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="2"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="3"></md-radio-button></div>
@@ -248,7 +248,7 @@
             </div> 
             <div layout="row" class="table-input">
                 <div flex="40" class="form-question"><p>Impact sur les activités sociales ou de loisirs</p></div>
-                <md-radio-group layout="row" flex="80">
+                <md-radio-group layout="row" flex="80" ng-model="vm.activityProblem">
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="1"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="2"></md-radio-button></div>
                     <div flex class="table-radio-button"><md-radio-button class="md-primary" value="3"></md-radio-button></div>

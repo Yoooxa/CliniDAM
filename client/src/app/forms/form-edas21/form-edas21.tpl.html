@@ -1,1 +1,247 @@
-Page du formulaire EDAS21
+<h3 class="md-headline" style="text-align: center;">Echelle de dépression d'anxiété et de stress (EDAS21)</h3>
+<div ng-controller="FormEdas21Ctrl as vm" class="content">
+<div ng-control layout="column" ng-cloak class="md-inline-form">
+<div class="md-padding" ng-cloak>
+  <div>
+    <!-- Card 1/2 - Patient's identity -->
+    <div layout-wrap layout-gt-sm="row" ng-show="vm.cardNumber == 1">
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" class="flex-80 card-style">
+        <div>
+            <md-card-header> 
+                <md-card-header-text> 
+                    <span class="md-title"> Identité du patient </span>
+                    <span class="md-subhead"> 
+                        Veuillez lire chaque énoncé et indiquez celui qui correspond le mieux à votre expérience au cours de la dernière semaine.
+                        Il n'y a pas de bonne ou de mauvaise réponse. 
+                        Ne vous attardez pas trop longuement sur les énoncés. 
+                    </span>
+                </md-card-header-text>
+            </md-card-header>
+            <div class="card-content">
+                <md-input-container>
+                    <label>Nom</label>
+                    <input required name="clientName" ng-model="vm.patientLastname">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Prénom</label>
+                    <input required name="clientName" ng-model="vm.patientFirstname">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Naissance</label>
+                    <md-datepicker required ng-model="vm.birthdayDate" name="birthdayDate"></md-datepicker>
+                </md-input-container>
+            </div>
+        </div>
+
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="setPreviousCardNumber()" ng-if="vm.cardNumber > 1" style="background-color:#eeeeee">Précédent</md-button>
+            <md-button ng-click="setNextCardNumber()" ng-if="vm.cardNumber < 2" style="background-color:#eeeeee">Suivant</md-button>
+        </md-card-actions>
+    </md-card>
+    </div>
+    <!-- End Card 1/2 -->
+
+    <!-- Card 2/2 - Patient's depression  -->
+    <div layout-wrap layout-gt-sm="row" ng-show="vm.cardNumber == 2">
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" class="flex-80 card-style">
+        <md-card-header> 
+            <md-card-header-text> 
+                <span class="md-title"> Questionnaire </span>
+            </md-card-header-text>
+        </md-card-header>
+
+        <div class="card-content">
+            <div class="card-title"> </div>
+            <div layout="row">
+                <div flex="40"></div>
+                <div layout="row" flex="80"> 
+                    <div flex class="table-column" ng-repeat="answer in vm.inputsGroup"> {{ answer.label }}</div>                  
+                </div>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai trouvé difficile de décompresser</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.decompressProblem">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>    
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai été conscient(e) d'avoir la bouche sèche</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.mouthProblem">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai eu l'impression de ne pas pouvoir ressentir d'émotion positive</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.noPositiveMood">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>            
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai eu de la difficulté à respirer (par exemple, respirations excessivement rapides, essoufflement sans effort physique)</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.hardBreath">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>    
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai eu de la difficulté à initier de nouvelles activités</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.hardNewActivities">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>   
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai eu tendane à réagir de façon exagérée</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.reactExaggeratedly">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>   
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai eu des tremblements (par exemple, des mains)</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.tremblingProblem">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div> 
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai eu l'impression de dépenser beaucoup d'énergie nerveuse</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.spendBadEnergy">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div> 
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>Je me suis inquiété(e) en pensant à des situations où je pourrais paniquer et faire de moi un(e) idiot(e)</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.situationsWorry">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div> 
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai eu le sentiment de ne rien envisager avec plaisir</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.noPleasure">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div> 
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>Je me suis aperçu(e) que je devenais agité(e)</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.beAgitated">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai eu de la difficulté à me détendre</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.loosenProblem">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>Je me suis senti(e) triste et déprimé(e)</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.beSad">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>Je me suis aperçu(e) que je devenais impatient(e) lorsque j'étais retardé(e) de quelque façon que ce soit (par exemple, dans les ascenseurs, aux feux de circulation...)</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.beLate">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p> J'ai eu le sentiment d'être presque pris(e) de panique</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.bePanicked">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p> J'ai été incapable de me sentir enthousiaste au sujet de quoi que ce soit</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.beEnthusiastic">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J'ai eu le sentiment de ne pas valoir grand chose comme personne</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.beNothing">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>Je me suis aperçu(e) que j’étais très irritable</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.beIrritable">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J’ai été conscient(e) des palpitations de mon coeur en l’absence d’effort physique (sensation d’augmentation de mon rythme cardiaque ou l’impression que mon cœur venait de sauter)</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.heartPalpitations">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J’ai eu peur sans bonne raison</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.beScared">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+            <div layout="row" class="table-input">
+                <div flex="40" class="form-question"><p>J’ai eu l’impression que la vie n’avait pas de sens</p></div>
+                <md-radio-group layout="row" flex="80" ng-model="vm.lifeNoSens">
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div> 
+                </md-radio-group>
+            </div>
+        </div>
+        <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="setPreviousCardNumber()" ng-if="vm.cardNumber > 1" style="background-color:#eeeeee">Précédent</md-button>
+        <md-button ng-click="setNextCardNumber()" ng-if="vm.cardNumber < 2" style="background-color:#eeeeee">Suivant</md-button>
+        </md-card-actions>
+    </md-card>
+    </div>
+    <!-- End Card 2/2 -->
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<style>
+.flex-80 {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.table-radio-button {
+    text-align: center;
+}
+
+.table-column {
+    text-align: center;
+}
+
+.all-table {
+    margin: 20px;
+}
+
+.table-input:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.table-input:nth-child(odd) {
+    background-color: #eeeeee;
+}
+
+.card-style {
+    padding: 30px;
+}
+
+.form-question {
+    text-align: center;
+}
+
+.card-content {
+    margin-bottom: 20px;
+}
+
+body {
+    background-image: url("assets/images/form-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>

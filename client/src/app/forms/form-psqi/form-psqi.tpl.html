@@ -81,8 +81,8 @@
                 <div layout="row" flex="80">
                   <div flex class="table-column" ng-repeat="answer in vm.inputsGroup"> {{ answer.label }}</div>
                 </div>
-
               </div>
+
               <div layout="row" class="table-input">
                 <div flex="40" class="form-question"><p>Avez-vous eu des difficultés à vous endormir en moins de 30 minutes ?</p></div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.sleepAfter30Minutes">
@@ -283,7 +283,7 @@
           <md-card-actions layout="row" layout-align="end center">
             <md-button ng-click="setPreviousCardNumber()" ng-if="vm.cardNumber > 1">Précédent</md-button>
             <md-button ng-click="setNextCardNumber()" ng-if="vm.cardNumber < 5">Suivant</md-button>
-            <md-button ng-click="" ng-if="vm.cardNumber == 5"> Envoyer </md-button>
+            <md-button ng-click="" ng-if="vm.cardNumber == 5"> Valider </md-button>
           </md-card-actions>
 
           <div layout="row" layout-align="start center">

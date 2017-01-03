@@ -281,15 +281,16 @@
           <div layout="row">
 
           </div>
-          <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-click="setPreviousCardNumber()" ng-if="vm.cardNumber > 1">Précédent</md-button>
-            <md-button ng-click="setNextCardNumber()" ng-if="vm.cardNumber < 5">Suivant</md-button>
-            <md-button ng-click="" ng-if="vm.cardNumber == 5"> Valider </md-button>
-          </md-card-actions>
-
           <div layout="row" layout-align="start center">
             <md-progress-linear  flex md-mode="determinate" value="{{(vm.cardNumber/5)*100}}"></md-progress-linear>
             <p flex="20" style="padding-left: 15px">Page {{ vm.cardNumber }} sur 5</p>
+
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button ng-click="setPreviousCardNumber()" ng-if="vm.cardNumber > 1">Précédent</md-button>
+              <md-button ng-click="setNextCardNumber()" ng-if="vm.cardNumber < 5">Suivant</md-button>
+              <md-button ng-click="" ng-if="vm.cardNumber == 5"> Valider </md-button>
+            </md-card-actions>
+
           </div>
 
         </md-card>

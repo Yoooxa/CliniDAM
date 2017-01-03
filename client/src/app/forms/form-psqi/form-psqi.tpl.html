@@ -46,10 +46,11 @@
                 <input name="usualSleepingHour" ng-model="vm.usualSleepingHour">
               </md-input-container>
 
-              <div>Au cours du mois dernier, combien vous a-t-il habituellement fallu de temps (en minutes) pour vous endormir chaque soir ?</div>
+              <div>Au cours du mois dernier, combien vous a-t-il habituellement fallu de temps (en minutes) pour vous endormir
+                chaque soir ?</div>
               <md-input-container>
                 <label>Temps en minutes</label>
-                <input type="number"  step="5" name="minutesBeforeSleep" ng-model="vm.minutesBeforeSleep">
+                <input type="number" step="5" name="minutesBeforeSleep" ng-model="vm.minutesBeforeSleep">
               </md-input-container>
 
               <div>Au cours du mois dernier, à quelle heure vous êtes vous habituellement réveillé le matin ?</div>
@@ -58,8 +59,8 @@
                 <input name="usualWakeUpHour" ng-model="vm.usualWakeUpHour">
               </md-input-container>
 
-              <div>Au cours du mois dernier, combien d'heures de sommeil effectif avez-vous eues chaque nuit ? (Ce nombre peut être différent du
-                nombre d'heures que vous avez passées au lit) ?</div>
+              <div>Au cours du mois dernier, combien d'heures de sommeil effectif avez-vous eues chaque nuit ? (Ce nombre peut
+                être différent du nombre d'heures que vous avez passées au lit) ?</div>
               <md-input-container>
                 <label>Nombre d'heures</label>
                 <input type="number" name="effectiveSleep" ng-model="vm.effectiveSleep">
@@ -85,70 +86,108 @@
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question"><p>Avez-vous eu des difficultés à vous endormir en moins de 30 minutes ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>Avez-vous eu des difficultés à vous endormir en moins de 30 minutes ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.sleepAfter30Minutes">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question"><p>Vous êtes vous réveillé avant l'heure souhaitée ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>Vous êtes vous réveillé avant l'heure souhaitée ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.wakeUpBeforeEstimatedHour">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question"><p>Avez-vous dû vous lever pour aller aux toilettes ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>Avez-vous dû vous lever pour aller aux toilettes ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.wakeUpToGoToToilet">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question"><p>Avez-vous eu des difficultés à respirer dans votre sommeil ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>Avez-vous eu des difficultés à respirer dans votre sommeil ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.breathingDifficultiesWhileSleeping">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question"><p>Avez-vous toussé pendant la nuit ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>Avez-vous toussé pendant la nuit ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.coughWhileSleeping">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question"><p>Avez-vous eu trop froid pendant votre sommeil ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>Avez-vous eu trop froid pendant votre sommeil ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.coldWhileSleeping">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question"><p>Acez-vous eu trop chaud pendant votre sommeil ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>Acez-vous eu trop chaud pendant votre sommeil ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.warmWhileSleeping">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question"><p>Avez-vous fait des mauvais rêves ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>Avez-vous fait des mauvais rêves ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.badDreamsWhileSleeping">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question"><p>Avez-vous souffert de douleurs pendant votre sommeil ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>Avez-vous souffert de douleurs pendant votre sommeil ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.painWhileSleeping">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
               <div layout="row" class="table-input">
-                <div flex="40" class="form-question" style="margin-top: 7px"><p>Pour d'autres raisons ?</p></div>
+                <div flex="40" class="form-question" style="margin-top: 7px">
+                  <p>Pour d'autres raisons ?</p>
+                </div>
                 <md-input-container flex>
                   <label>Description</label>
                   <input flex="80" ng-model="vm.otherSleepTroubleReason">
@@ -156,9 +195,13 @@
               </div>
 
               <div layout="row" class="table-input" ng-if="vm.otherSleepTroubleReason && vm.otherSleepTroubleReason != ''">
-                <div flex="40" class="form-question"><p>A quelle fréquence avez-vous recontré ces problèmes ?</p></div>
+                <div flex="40" class="form-question">
+                  <p>A quelle fréquence avez-vous recontré ces problèmes ?</p>
+                </div>
                 <md-radio-group layout="row" flex="80" ng-model="vm.otherSleepTroubleReasonFrequency">
-                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                  <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                    <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                  </div>
                 </md-radio-group>
               </div>
 
@@ -193,14 +236,14 @@
                 <md-radio-button ng-repeat="input in vm.inputsGroup" value="{{input.value}}">{{input.label}}</md-radio-button>
               </md-radio-group>
 
-              <div>Au cours du mois dernier, combien de fois avez-vous eu des difficultés à demeurer éveillé(e)
-                pendant que vous conduisiez, preniez vos repas, étiez occupé(e) dans une activité sociale ?</div>
+              <div>Au cours du mois dernier, combien de fois avez-vous eu des difficultés à demeurer éveillé(e) pendant que vous
+                conduisiez, preniez vos repas, étiez occupé(e) dans une activité sociale ?</div>
               <md-radio-group layout="column" ng-model="vm.difficultiesToStayAwake">
                 <md-radio-button ng-repeat="input in vm.inputsGroup" value="{{input.value}}">{{input.label}}</md-radio-button>
               </md-radio-group>
 
-              <div>Au cours du mois dernier, à quel degré cela a-t-il représenté un problème pour vous
-                d'avoir assez d'enthousiasme pour faire ce que vous aviez à faire ?</div>
+              <div>Au cours du mois dernier, à quel degré cela a-t-il représenté un problème pour vous d'avoir assez d'enthousiasme
+                pour faire ce que vous aviez à faire ?</div>
               <md-radio-group layout="column" ng-model="vm.difficultiesToStayAwake">
                 <md-radio-button value="1">Pas de problème du tout</md-radio-button>
                 <md-radio-button value="2">Seulement un tout petit problème</md-radio-button>
@@ -239,60 +282,73 @@
 
                 </div>
                 <div layout="row" class="table-input">
-                  <div flex="40" class="form-question"><p> De forts ronflements</p></div>
+                  <div flex="40" class="form-question">
+                    <p> De forts ronflements</p>
+                  </div>
                   <md-radio-group layout="row" flex="80" ng-model="vm.noisySnoring">
-                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                      <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                    </div>
                   </md-radio-group>
                 </div>
 
                 <div layout="row" class="table-input">
-                  <div flex="40" class="form-question"><p> De longues pauses respiratoires pendant votre sommeil</p></div>
+                  <div flex="40" class="form-question">
+                    <p> De longues pauses respiratoires pendant votre sommeil</p>
+                  </div>
                   <md-radio-group layout="row" flex="80" ng-model="vm.breathingBreaks">
-                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                      <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                    </div>
                   </md-radio-group>
                 </div>
 
                 <div layout="row" class="table-input">
-                  <div flex="40" class="form-question"><p> Des saccades ou des secousses des jambes pendant que vous dormiez</p></div>
+                  <div flex="40" class="form-question">
+                    <p> Des saccades ou des secousses des jambes pendant que vous dormiez</p>
+                  </div>
                   <md-radio-group layout="row" flex="80" ng-model="vm.leggsShakeWhileSleeping">
-                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                      <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                    </div>
                   </md-radio-group>
                 </div>
 
                 <div layout="row" class="table-input">
-                  <div flex="40" class="form-question"><p> Des épisodes de désorientation ou de confusion pendant le sommeil</p></div>
+                  <div flex="40" class="form-question">
+                    <p> Des épisodes de désorientation ou de confusion pendant le sommeil</p>
+                  </div>
                   <md-radio-group layout="row" flex="80" ng-model="vm.periodsOfConfusion">
-                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                      <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                    </div>
                   </md-radio-group>
                 </div>
                 <div layout="row" class="table-input">
-                  <div flex="40" class="form-question"><p> D'autres motifs d'agitation pendant votre sommeil</p></div>
+                  <div flex="40" class="form-question">
+                    <p> D'autres motifs d'agitation pendant votre sommeil</p>
+                  </div>
                   <md-radio-group layout="row" flex="80" ng-model="vm.otherAgitation">
-                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup"><md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button></div>
+                    <div flex class="table-radio-button" ng-repeat="answer in vm.inputsGroup">
+                      <md-radio-button class="md-primary" value="{{ answer.value }}"></md-radio-button>
+                    </div>
                   </md-radio-group>
                 </div>
-
               </div>
-
             </div>
           </div>
           <!-- End card 5/5 -->
 
-          <div layout="row">
-
-          </div>
           <div layout="row" layout-align="start center">
-            <md-progress-linear  flex md-mode="determinate" value="{{(vm.cardNumber/5)*100}}"></md-progress-linear>
-            <p flex="20" style="padding-left: 15px">Page {{ vm.cardNumber }} sur 5</p>
+            <md-progress-linear flex md-mode="determinate" value="{{(vm.cardNumber/5)*100}}"></md-progress-linear>
+            <p flex="20" class="card-pagination">Page {{ vm.cardNumber }} sur 5</p>
 
             <md-card-actions layout="row" layout-align="end center">
               <md-button ng-click="setPreviousCardNumber()" ng-if="vm.cardNumber > 1">Précédent</md-button>
               <md-button ng-click="setNextCardNumber()" ng-if="vm.cardNumber < 5">Suivant</md-button>
               <md-button ng-click="" ng-if="vm.cardNumber == 5"> Valider </md-button>
             </md-card-actions>
-
           </div>
-
         </md-card>
       </div>
     </div>

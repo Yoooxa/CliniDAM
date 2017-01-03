@@ -9,7 +9,7 @@
     
       var vm = this;
 
-      vm.cardNumber = 1
+      vm.cardNumber = 1;
 
       $scope.log = function() {
         console.log('--- vm ---')
@@ -17,11 +17,11 @@
       }
 
       $scope.setNextCardNumber = function() {
-        vm.cardNumber++
+        vm.cardNumber++;
       }
 
       $scope.setPreviousCardNumber = function() {
-        vm.cardNumber--
+        vm.cardNumber--;
       }
   }
 

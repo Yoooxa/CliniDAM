@@ -5,11 +5,12 @@
    * @name  HomeCtrl
    * @description Controller
    */
-  function HomeCtrl(data) {
-    var home = this;
-    home.data = data.data;
+  function HomeCtrl($scope) {
+    var vm = this;
+    $scope.imagePath = '../assets/images/form-background.jpg';
   }
 
-  angular.module('home', [])
-    .controller('HomeCtrl', HomeCtrl);
+  angular.module('home', ['ngMaterial'])
+    .controller('HomeCtrl', HomeCtrl)
+    .$inject = ['$scope'];
 })();

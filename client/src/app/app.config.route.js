@@ -20,7 +20,6 @@
                     }
                 }
             })
-
             .state('root.home', {
                 url: '/',
                 views: {
@@ -74,6 +73,17 @@
                 controller: 'FormEdas21Ctrl as formEdas21'
               }
             }
+          })
+
+          .state('root.authentication', {
+            url: '/authentication',
+            views: {
+              '@': {
+                templateUrl: 'src/app/authentication/authentication.tpl.html',
+                controller: 'AuthenticationCtrl as authentication'
+              }
+            }
+
           });
     }
 

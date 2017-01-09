@@ -21,6 +21,7 @@
       'form-psqi',
       'form-dn4',
       'form-edas21',
+      'authentication',
       'common.header',
       'common.footer',
       'common.services.data',

@@ -21,6 +21,7 @@
       'form-psqi',
       'form-dn4',
       'form-edas21',
+      'form-dam',
       'authentication',
       'inscription',
       'common.header',

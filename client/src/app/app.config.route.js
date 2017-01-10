@@ -74,6 +74,16 @@
               }
             }
           })
+          
+          .state('root.form-dam', {
+            url: '/forms/form-dam',
+            views: {
+              '@': {
+                templateUrl: 'src/app/forms/form-dam/form-dam.tpl.html',
+                controller: 'FormDamCtrl as formDam'
+              }
+            }
+          })
 
           .state('root.authentication', {
             url: '/authentication',

@@ -1,7 +1,25 @@
 <div ng-controller="AuthenticationCtrl as vm">
-  <div ng-control layout="column" class="md-inline-form">
-  Hello !
+  <div ng-control layout="column" class="md-inline-form" flex="50" style="margin: 0 auto; vertical-align: middle; margin-top: 15%;">
+    <md-toolbar>
+      <h2 class="md-toolbar-tools">{{ 'connexion' | uppercase }}</h2>
+    </md-toolbar>
+    <md-content class="md-padding" layout="column">
+      <md-input-container>
+        <label>Identifiant</label>
+        <input type="email" ng-model="vm.username" required/>
+      </md-input-container>
+      <md-input-container>
+        <label>Mot de passe</label>
+        <input type="password" ng-model="vm.password" required/>
+      </md-input-container>
+      <div layout="row" layout-align="center center">
+        <md-button href="" md-no-ink="md-no-ink">Mot de passe oublié ?</md-button>
+        <div flex="flex"></div>
+        <md-button class="md-raised md-primary">Se connecter</md-button>
+      </div>
+    </md-content>
   </div>
-
-  <button ng-click="vm.authentication()">Test</button>
+  <section layout="row" layout-sm="column" layout-align="center center" layout-wrap style="margin: 30px;">
+      <md-button class="md-warn md-raised md-hue-2">Inscription</md-button>
+  </section>
 </div>

@@ -8,6 +8,10 @@
   function HomeCtrl($scope) {
     var vm = this;
     $scope.imagePath = '../assets/images/form-background.jpg';
+
+    vm.test = function () {
+      console.log('salut');
+    }
   }
 
   angular.module('home', ['ngMaterial'])

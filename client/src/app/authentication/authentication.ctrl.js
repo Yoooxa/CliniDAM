@@ -10,22 +10,36 @@
    */
   function AuthenticationCtrl($scope, AuthenticationService) {
 
-    var self = this;
+    var vm = this;
+    
+    vm.login = login;
 
-    self.authentication = function () {
+    vm.authentication = function () {
 
       _authenticate();
     };
-
-
 
     function _authenticate () {
       AuthenticationService.authentication();
     }
 
+    function login() {
+      if(response.sucess) {
+        console.log('Login OK');
+      } else {
+        console.log('Login KO');
+      }
+    }
+
   }
 
-  angular.module('authentication', [])
+  angular
+    .module('authentication', [])
     .controller('AuthenticationCtrl', AuthenticationCtrl)
     //.$inject = ['$scope', 'AuthenticationService']
+    .config(function($mdThemingProvider) {
+      $mdThemingProvider.theme('default')
+        .primaryPalette('blue-grey')
+        .accentPalette('grey')
+    })
 })();

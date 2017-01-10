@@ -1,7 +1,43 @@
 <footer>
     <div layout="row" layout-align="center center" flex style="margin: 0 auto; ">
-    <a>Qui sommes-nous ? </a> | 
-    <a> Pourquoi ce site ? </a> | 
-    <a>Conditions générales d'utilisation </a>
+        <nav class="nav-footer">
+            <span><a href="#">Qui sommes-nous ? </a></span>
+            <span><a href="#"> Pourquoi ce site ? </a></span>
+            <span><a href="#">Conditions générales d'utilisation </a></span>
+        </nav>
     </div>
 </footer>
+
+<!-- FIX ME : A mettre dans le style.css -->
+<style>
+.nav-footer {
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+}
+
+.nav-footer span,
+.nav-footer a {
+  color: #000;
+  margin: 0 4px;
+}
+
+.nav-footer span:after {
+  content: "|";
+  margin-left: 8px;
+  line-height: 1;
+}
+
+.nav-footer span:first-of-type {
+  margin: 0 4px 0 0;
+}
+
+.nav-footer span:last-of-type {
+  margin: 0 0 0 4px;
+}
+
+.nav-footer span:last-child:after {
+  content: '';
+  margin-left: 0;
+}
+</style>

@@ -83,7 +83,16 @@
                 controller: 'AuthenticationCtrl as authentication'
               }
             }
+          })
 
+          .state('root.inscription', {
+            url: '/inscription',
+            views: {
+              '@': {
+                templateUrl: 'src/app/inscription/inscription.tpl.html',
+                controller: 'InscriptionCtrl as inscription'
+              }
+            }
           });
     }
 

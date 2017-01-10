@@ -22,6 +22,7 @@
       'form-dn4',
       'form-edas21',
       'authentication',
+      'inscription',
       'common.header',
       'common.footer',
       'common.services.data',

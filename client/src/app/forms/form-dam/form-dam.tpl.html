@@ -5,7 +5,7 @@
       <div layout-wrap layout="row">
         <md-card flex="80" class="padding-card">
 
-          <!-- Card 1/4 - Patient's identity -->
+          <!-- Card 1/22 - Patient's identity -->
           <div ng-if="vm.cardNumber == 1">
             <md-card-header>
               <md-card-header-text>
@@ -27,24 +27,16 @@
                 <label>Naissance</label>
                 <md-datepicker required ng-model="vm.birthdayDate" name="birthdayDate"></md-datepicker>
               </md-input-container>
-
-                <md-input-container>
-                    <label>Sexe</label>
-                    <md-select ng-model="vm.sex">
-                        <md-option ng-repeat="sex in sexes" value="{{sex.abbrev}}">
-                        {{sex.abbrev}}
-                        </md-option>
-                    </md-select>
-                </md-input-container>
+              <!-- TO DO : Ajouter le sexe -->
                 <md-input-container class="md-block">
                     <label>Bilan de santé</label>
                     <textarea ng-model="vm.healthBilan" md-maxlength="150" rows="5" md-select-on-focus></textarea>
                 </md-input-container>
             </div>
           </div>
-          <!-- End Card 1/4 -->
+          <!-- End Card 1/22 -->
 
-          <!-- Card 2/21 - Motif de la consultation -->
+          <!-- Card 2/22 - Motif de la consultation -->
           <div ng-if="vm.cardNumber == 2">
             <md-card-header>
               <md-card-header-text>
@@ -81,15 +73,16 @@
                     <label> Autres </label>
                     <md-radio-button style="margin-left: 5px" class="md-primary" value="5"></md-radio-button>
                   </span>
-                </md-radio-group>
+                </md-radio-group><br>
                 <md-input-container class="md-block">
+                    <label>Motif de la consultation</label>
                     <textarea ng-model="vm.consultationTarget" md-maxlength="150" rows="5" md-select-on-focus></textarea>
                 </md-input-container>
             </div>
           </div>
-          <!-- End Card 2/21 -->
+          <!-- End Card 2/22 -->
 
-          <!-- Card 3/21 - Evaluation de la douleur -->
+          <!-- Card 3/22 - Evaluation de la douleur -->
           <div ng-if="vm.cardNumber == 3">
             <md-card-header>
               <md-card-header-text>
@@ -100,9 +93,9 @@
                 <!-- TO DO : Mettre le canvas -->
             </div>
           </div>
-          <!-- End Card 3/21 -->
+          <!-- End Card 3/22 -->
 
-          <!-- Card 4/21 - Environnement -->
+          <!-- Card 4/22 - Environnement -->
           <div ng-if="vm.cardNumber == 4">
             <md-card-header>
               <md-card-header-text>
@@ -122,11 +115,12 @@
                     <label>Professionnel</label>
                     <textarea ng-model="vm.professionalTextarea" md-maxlength="150" rows="5" md-select-on-focus></textarea>
                 </md-input-container>
+                <md-button class="md-raised md-primary" ui-sref="root.form-edas21">Questionnaire EDAS21</md-button>
             </div>
           </div>
-          <!-- End Card 4/21 -->
+          <!-- End Card 4/22 -->
 
-          <!-- Card 5/21 - Troubles de la posture -->
+          <!-- Card 5/22 - Troubles de la posture -->
           <div ng-if="vm.cardNumber == 5">
             <md-card-header>
               <md-card-header-text>
@@ -144,9 +138,9 @@
                 </md-input-container>
             </div>
           </div>
-          <!-- End Card 5/21 -->
+          <!-- End Card 5/22 -->
 
-          <!-- Card 6/21 - Troubles du sommeil -->
+          <!-- Card 6/22 - Troubles du sommeil -->
           <div ng-if="vm.cardNumber == 6">
             <md-card-header>
               <md-card-header-text>
@@ -154,6 +148,13 @@
               </md-card-header-text>
             </md-card-header>
             <div class="card-content">
+              <span class="md-title" flex="100"> Souffrez vous du syndrome d'apnées/hypopnées obstructives du sommeil ?  </span>
+                        <div class="isi-table">
+                            <md-radio-group layout="column" ng-model="vm.sleepingSatisfaction">
+                                <md-radio-button class="md-primary" value="1">Oui</md-radio-button>
+                                <md-radio-button class="md-primary" value="2">Non</md-radio-button>
+                            </md-radio-group>
+                        </div><br>
                 <md-input-container class="md-block">
                     <label>Autres symptômes</label>
                     <textarea ng-model="vm.familialTextarea" md-maxlength="150" rows="5" md-select-on-focus></textarea>
@@ -162,11 +163,13 @@
                     <label>Traitement</label>
                     <textarea ng-model="vm.socialTextarea" md-maxlength="150" rows="5" md-select-on-focus></textarea>
                 </md-input-container>
+                <md-button class="md-raised md-primary" ui-sref="root.form-psqi">Questionnaire PSQI</md-button>
+                <md-button class="md-raised md-primary" ui-sref="root.form-isi">Questionnaire ISI</md-button>
             </div>
           </div>
-          <!-- End Card 6/21 -->
+          <!-- End Card 6/22 -->
 
-          <!-- Card 7/21 - Troubles occulaires -->
+          <!-- Card 7/22 - Troubles occulaires -->
           <div ng-if="vm.cardNumber == 7">
             <md-card-header>
               <md-card-header-text>
@@ -175,13 +178,14 @@
             </md-card-header>
             <div class="card-content">
                 <md-input-container class="md-block">
+                    <label> Description du trouble </label>
                     <textarea ng-model="vm.consultationTarget" md-maxlength="150" rows="5" md-select-on-focus></textarea>
                 </md-input-container>
             </div>
           </div>
-          <!-- End Card 7/21 -->
+          <!-- End Card 7/22 -->
 
-          <!-- Card 8/21 - Habitudes nocives -->
+          <!-- Card 8/22 - Habitudes nocives -->
           <div ng-if="vm.cardNumber == 8">
             <md-card-header>
               <md-card-header-text>
@@ -189,14 +193,21 @@
               </md-card-header-text>
             </md-card-header>
             <div class="card-content">
+                <md-checkbox style="margin-bottom:0;">Onycophagie</md-checkbox><br>
+                <md-checkbox style="margin-bottom:0;">Mordillement des lèvres / objets</md-checkbox><br>
+                <md-checkbox style="margin-bottom:0;">Bruxisme d'éveil</md-checkbox><br>
+                <md-checkbox style="margin-bottom:0;">Chewing-gum</md-checkbox><br>
+                <md-checkbox style="margin-bottom:0;">Tabac</md-checkbox><br>
+                <md-checkbox style="margin-bottom:0;">Autres</md-checkbox><br><br>
                 <md-input-container class="md-block">
+                    <label> Informations complémentaires </label>
                     <textarea ng-model="vm.consultationTarget" md-maxlength="150" rows="5" md-select-on-focus></textarea>
                 </md-input-container>
             </div>
           </div>
-          <!-- End Card 8/21 -->
+          <!-- End Card 8/22 -->
 
-          <!-- Card 9/21 - Dysfonctionnements oro-lingaux -->
+          <!-- Card 9/22 - Dysfonctionnements oro-lingaux -->
           <div ng-if="vm.cardNumber == 9">
             <md-card-header>
               <md-card-header-text>
@@ -204,14 +215,17 @@
               </md-card-header-text>
             </md-card-header>
             <div class="card-content">
+              <md-checkbox>Dysfonctionnements orolinguaux </md-checkbox>
+              <md-checkbox>Déglutition atypique </md-checkbox>
                 <md-input-container class="md-block">
+                    <label> Informations complémentaires </label>
                     <textarea ng-model="vm.consultationTarget" md-maxlength="150" rows="5" md-select-on-focus></textarea>
                 </md-input-container>
             </div>
           </div>
-          <!-- End Card 9/21 -->
+          <!-- End Card 9/22 -->
 
-        <!-- Card 10/21 - Traumatisme -->
+        <!-- Card 10/22 - Traumatisme -->
           <div ng-if="vm.cardNumber == 10">
             <md-card-header>
               <md-card-header-text>
@@ -220,13 +234,30 @@
             </md-card-header>
             <div class="card-content">
                 <md-input-container class="md-block">
+                    <label> Description du traumatisme </label>
                     <textarea ng-model="vm.consultationTarget" md-maxlength="150" rows="5" md-select-on-focus></textarea>
                 </md-input-container>
             </div>
           </div>
-          <!-- End Card 10/21 -->
+          <!-- End Card 10/22 -->
 
-          <!-- Card 11/21 - Palpation(s) douloureuse(s) des muscles masticateurs, des ATM et des muscles cervico-spaculaires -->
+          <!-- Card 11/22 - Observations complémentaires -->
+          <div ng-if="vm.cardNumber == 10">
+            <md-card-header>
+              <md-card-header-text>
+                <span class="md-title"> Observations complémentaires </span>
+              </md-card-header-text>
+            </md-card-header>
+            <div class="card-content">
+                <md-input-container class="md-block">
+                    <label> Description </label>
+                    <textarea ng-model="vm.consultationTarget" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                </md-input-container>
+            </div>
+          </div>
+          <!-- End Card 11/22 -->
+
+          <!-- Card 12/21 - Palpation(s) douloureuse(s) des muscles masticateurs, des ATM et des muscles cervico-spaculaires -->
           <div ng-if="vm.cardNumber == 11">
             <md-card-header>
               <md-card-header-text>
@@ -237,9 +268,9 @@
 
             </div>
           </div>
-          <!-- End Card 11/21 -->
+          <!-- End Card 12/22 -->
 
-          <!-- Card 12/21 - Rapports incisifs -->
+          <!-- Card 13/22 - Rapports incisifs -->
           <div ng-if="vm.cardNumber == 12">
             <md-card-header>
               <md-card-header-text>
@@ -250,9 +281,9 @@
 
             </div>
           </div>
-          <!-- End Card 11/21 -->
+          <!-- End Card 13/22 -->
 
-          <!-- Card 13/21 - Rapports incisifs -->
+          <!-- Card 14/22 - Rapports incisifs -->
           <div ng-if="vm.cardNumber == 13">
             <md-card-header>
               <md-card-header-text>
@@ -263,9 +294,9 @@
 
             </div>
           </div>
-          <!-- End Card 13/21 -->
+          <!-- End Card 14/22 -->
 
-          <!-- Card 14/21 - Rapports incisifs -->
+          <!-- Card 15/22 - Rapports incisifs -->
           <div ng-if="vm.cardNumber == 14">
             <md-card-header>
               <md-card-header-text>
@@ -276,9 +307,9 @@
 
             </div>
           </div>
-          <!-- End Card 14/21 -->
+          <!-- End Card 15/22 -->
 
-          <!-- Card 15/21 - Rapports incisifs -->
+          <!-- Card 16/22 - Rapports incisifs -->
           <div ng-if="vm.cardNumber == 15">
             <md-card-header>
               <md-card-header-text>
@@ -289,9 +320,9 @@
 
             </div>
           </div>
-          <!-- End Card 15/21 -->
+          <!-- End Card 16/22 -->
 
-          <!-- Card 16/21 - Blocage articulaire -->
+          <!-- Card 17/22 - Blocage articulaire -->
           <div ng-if="vm.cardNumber == 16">
             <md-card-header>
               <md-card-header-text>
@@ -302,9 +333,9 @@
 
             </div>
           </div>
-          <!-- End Card 16/21 -->
+          <!-- End Card 17/22 -->
 
-          <!-- Card 17/21 - Test du bâtonnet -->
+          <!-- Card 18/22 - Test du bâtonnet -->
           <div ng-if="vm.cardNumber == 17">
             <md-card-header>
               <md-card-header-text>
@@ -315,9 +346,9 @@
 
             </div>
           </div>
-          <!-- End Card 17/21 -->
+          <!-- End Card 18/22 -->
 
-          <!-- Card 18/21 - Elasticité articulaire -->
+          <!-- Card 19/22 - Elasticité articulaire -->
           <div ng-if="vm.cardNumber == 18">
             <md-card-header>
               <md-card-header-text>
@@ -328,9 +359,9 @@
 
             </div>
           </div>
-          <!-- End Card 18/21 -->
+          <!-- End Card 19/22 -->
 
-          <!-- Card 19/21 - Examen endo-buccal -->
+          <!-- Card 20/22 - Examen endo-buccal -->
           <div ng-if="vm.cardNumber == 19">
             <md-card-header>
               <md-card-header-text>
@@ -341,9 +372,9 @@
 
             </div>
           </div>
-          <!-- End Card 19/21 -->
+          <!-- End Card 20/22 -->
 
-          <!-- Card 20/21 - Examen endo-buccal -->
+          <!-- Card 21/22 - Examen endo-buccal -->
           <div ng-if="vm.cardNumber == 20">
             <md-card-header>
               <md-card-header-text>
@@ -354,10 +385,10 @@
 
             </div>
           </div>
-          <!-- End Card 20/21 -->
+          <!-- End Card 21/22 -->
 
 
-          <!-- Card 21/21 - Examen endo-buccal -->
+          <!-- Card 22/22 - Examen endo-buccal -->
           <div ng-if="vm.cardNumber == 21">
             <md-card-header>
               <md-card-header-text>
@@ -368,7 +399,7 @@
 
             </div>
           </div>
-          <!-- End Card 21/21 -->
+          <!-- End Card 22/22 -->
 
           <div layout="row" layout-align="start center">
               <md-progress-linear flex md-mode="determinate" value="{{(vm.cardNumber/21)*100}}"></md-progress-linear>

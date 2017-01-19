@@ -225,7 +225,7 @@
           </div>
           <!-- End Card 9/22 -->
 
-        <!-- Card 10/22 - Traumatisme -->
+          <!-- Card 10/22 - Traumatisme -->
           <div ng-if="vm.cardNumber == 10">
             <md-card-header>
               <md-card-header-text>
@@ -242,7 +242,7 @@
           <!-- End Card 10/22 -->
 
           <!-- Card 11/22 - Observations complémentaires -->
-          <div ng-if="vm.cardNumber == 10">
+          <div ng-if="vm.cardNumber == 11">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Observations complémentaires </span>
@@ -258,20 +258,126 @@
           <!-- End Card 11/22 -->
 
           <!-- Card 12/21 - Palpation(s) douloureuse(s) des muscles masticateurs, des ATM et des muscles cervico-spaculaires -->
-          <div ng-if="vm.cardNumber == 11">
+          <div ng-if="vm.cardNumber == 12">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Palpation(s) douloureuse(s) des muscles masticateurs, des ATM et des muscles cervico-spaculaires </span>
+                <span class="md-subhead"> </span>
               </md-card-header-text>
             </md-card-header>
             <div class="card-content">
+              <div class="card-title"> </div>
+              <div layout="row">
+                  <div flex="40"></div>
+                  <div layout="row" flex="80">
+                      <div flex class="table-column">Douleur provoquée</div>
+                      <div flex class="table-column">Est-elle identique à la douleur habituelle ?</div>
+                      <div flex class="table-column">Douleur(s) référée(s)</div>
+                  </div>
 
+              </div>
+              <div layout="row" class="table-input">
+                  <div flex="40" class="form-question">
+                      <p>Temporal postérieur</p>
+                  </div>
+                  <md-radio-group layout="row" flex="80" ng-model="vm.sleepingDifficulty">
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="1"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="2"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="3"></md-radio-button>
+                      </div>
+                  </md-radio-group>
+              </div>
+              <div layout="row" class="table-input">
+                  <div flex="40" class="form-question">
+                      <p>Temporal moyen</p>
+                  </div>
+                  <md-radio-group layout="row" flex="80" ng-model="vm.stayingSleepDifficulty">
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="1"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="2"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="3"></md-radio-button>
+                      </div>
+                  </md-radio-group>
+              </div>
+              <div layout="row" class="table-input">
+                  <div flex="40" class="form-question">
+                      <p>Temporal antérieur</p>
+                  </div>
+                  <md-radio-group layout="row" flex="80" ng-model="vm.wakeupProblem">
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="1"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="2"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="3"></md-radio-button>
+                      </div>
+                  </md-radio-group>
+              </div>
+              <div layout="row" class="table-input">
+                  <div flex="40" class="form-question">
+                      <p>Masséter (origine angle mdb)</p>
+                  </div>
+                  <md-radio-group layout="row" flex="80" ng-model="vm.wakeupProblem">
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="1"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="2"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="3"></md-radio-button>
+                      </div>
+                  </md-radio-group>
+              </div>
+              <div layout="row" class="table-input">
+                  <div flex="40" class="form-question">
+                      <p>Masséter (corps)</p>
+                  </div>
+                  <md-radio-group layout="row" flex="80" ng-model="vm.wakeupProblem">
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="1"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="2"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="3"></md-radio-button>
+                      </div>
+                  </md-radio-group>
+              </div>
+              <div layout="row" class="table-input">
+                  <div flex="40" class="form-question">
+                      <p>Masséter (insertion zygomatique)</p>
+                  </div>
+                  <md-radio-group layout="row" flex="80" ng-model="vm.wakeupProblem">
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="1"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="2"></md-radio-button>
+                      </div>
+                      <div flex class="table-radio-button">
+                          <md-radio-button class="md-primary" value="3"></md-radio-button>
+                      </div>
+                  </md-radio-group>
+              </div>
             </div>
           </div>
           <!-- End Card 12/22 -->
 
           <!-- Card 13/22 - Rapports incisifs -->
-          <div ng-if="vm.cardNumber == 12">
+          <div ng-if="vm.cardNumber == 13">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Rapports incisifs </span>
@@ -284,7 +390,7 @@
           <!-- End Card 13/22 -->
 
           <!-- Card 14/22 - Rapports incisifs -->
-          <div ng-if="vm.cardNumber == 13">
+          <div ng-if="vm.cardNumber == 14">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Mouvements d'ouverture, latéralités et propulsion </span>
@@ -297,7 +403,7 @@
           <!-- End Card 14/22 -->
 
           <!-- Card 15/22 - Rapports incisifs -->
-          <div ng-if="vm.cardNumber == 14">
+          <div ng-if="vm.cardNumber == 15">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Trajet d'ouverture et de fermeture </span>
@@ -310,7 +416,7 @@
           <!-- End Card 15/22 -->
 
           <!-- Card 16/22 - Rapports incisifs -->
-          <div ng-if="vm.cardNumber == 15">
+          <div ng-if="vm.cardNumber == 16">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Bruits articulaires lors des mouvements fonctionnels </span>
@@ -323,7 +429,7 @@
           <!-- End Card 16/22 -->
 
           <!-- Card 17/22 - Blocage articulaire -->
-          <div ng-if="vm.cardNumber == 16">
+          <div ng-if="vm.cardNumber == 17">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Blocage articulaire </span>
@@ -336,7 +442,7 @@
           <!-- End Card 17/22 -->
 
           <!-- Card 18/22 - Test du bâtonnet -->
-          <div ng-if="vm.cardNumber == 17">
+          <div ng-if="vm.cardNumber == 18">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Test du bâtonnet </span>
@@ -349,7 +455,7 @@
           <!-- End Card 18/22 -->
 
           <!-- Card 19/22 - Elasticité articulaire -->
-          <div ng-if="vm.cardNumber == 18">
+          <div ng-if="vm.cardNumber == 19">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Elasticité articulaire </span>
@@ -362,7 +468,7 @@
           <!-- End Card 19/22 -->
 
           <!-- Card 20/22 - Examen endo-buccal -->
-          <div ng-if="vm.cardNumber == 19">
+          <div ng-if="vm.cardNumber == 20">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Examen endo-buccal </span>
@@ -375,7 +481,7 @@
           <!-- End Card 20/22 -->
 
           <!-- Card 21/22 - Examen endo-buccal -->
-          <div ng-if="vm.cardNumber == 20">
+          <div ng-if="vm.cardNumber == 21">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Usures dentaires / bruxismes </span>
@@ -389,7 +495,7 @@
 
 
           <!-- Card 22/22 - Examen endo-buccal -->
-          <div ng-if="vm.cardNumber == 21">
+          <div ng-if="vm.cardNumber == 22">
             <md-card-header>
               <md-card-header-text>
                 <span class="md-title"> Usures dentaires / bruxismes </span>

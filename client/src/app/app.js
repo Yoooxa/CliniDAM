@@ -22,6 +22,7 @@
       'form-dn4',
       'form-edas21',
       'form-dam',
+      'about-us',
       'authentication',
       'inscription',
       'common.header',

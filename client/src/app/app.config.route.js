@@ -103,6 +103,16 @@
                 controller: 'InscriptionCtrl as inscription'
               }
             }
+          })
+          
+          .state('root.about-us', {
+            url: '/about-us',
+            views: {
+              '@': {
+                templateUrl: 'src/app/footer/about-us.tpl.html',
+                controller: 'AboutUsCtrl as aboutUs'
+              }
+            }
           });
     }
 

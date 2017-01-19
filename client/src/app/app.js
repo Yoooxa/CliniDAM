@@ -23,6 +23,7 @@
       'form-edas21',
       'form-dam',
       'about-us',
+      'why-website',
       'authentication',
       'inscription',
       'common.header',

@@ -2,10 +2,10 @@
   'use strict';
 
   /**
-   * @name  AboutUsCtrl
+   * @name  WhyWebsiteCtrl
    * @description Controller
    */
-  function AboutUsCtrl($scope) {
+  function WhyWebsiteCtrl($scope) {
 
     var vm = this;
 
@@ -25,8 +25,8 @@
     }
   }
 
-  angular.module('about-us', [])
-    .controller('AboutUsCtrl', AboutUsCtrl)
+  angular.module('why-website', [])
+    .controller('WhyWebsiteCtrl', WhyWebsiteCtrl)
     .$inject = ['$scope'];
 })();
 

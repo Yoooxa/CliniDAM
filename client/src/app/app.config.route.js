@@ -113,6 +113,16 @@
                 controller: 'AboutUsCtrl as aboutUs'
               }
             }
+          })
+          
+          .state('root.why-website', {
+            url: '/why-website',
+            views: {
+              '@': {
+                templateUrl: 'src/app/footer/why-website.tpl.html',
+                controller: 'WhyWebsiteCtrl as whyWebsite'
+              }
+            }
           });
     }
 
